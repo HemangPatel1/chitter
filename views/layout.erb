@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Chitter</title>
+</head>
+
+<body>
+<header>
+<h1>Welcome to Chitter</h1>
+
+<% if current_user %>
+  Welcome <%= current_user.name %>
+<% end %>
+
+</header>
+
+<section>
+<%= yield %>
+</section>
+
+</body>
+</html>
+
