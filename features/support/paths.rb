@@ -16,6 +16,10 @@ module NavigationHelpers
 		when /the sign\s?up\s?page/
 			'/users/new'
 
+		when /the sign\s?in\s?page/
+			'/sessions/new'
+
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
