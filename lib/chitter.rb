@@ -8,7 +8,6 @@ DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 require './lib/user'
 
 DataMapper.finalize
-DataMapper.auto_upgrade!
 
 
 class Chitter < Sinatra::Base
@@ -43,7 +42,7 @@ class Chitter < Sinatra::Base
 			session[:user_id] = @user.id
 			redirect to('/')
 		else
-			flash[:notice] = "Sorry, your passwords don't match!"
+			flash.now[:errors] = @user.errors.full_messages
 			erb :"users/new"
 		end
 	end
