@@ -10,6 +10,5 @@ Feature: Signing up
 
 	Scenario: Signing up - filling out form
 	Given I am on the sign up page
-	And I complete the form
-     #	And the two password fields match
+	And I complete the form with matching passwords
 	Then I should see "Welcome Hemang"
