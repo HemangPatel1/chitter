@@ -7,6 +7,10 @@
 <header>
 <h1>Welcome to Chitter</h1>
 
+<% if flash[:notice] %>
+  <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <% if current_user %>
   Welcome <%= current_user.name %>
 <% end %>
