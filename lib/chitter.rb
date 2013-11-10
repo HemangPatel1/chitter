@@ -25,6 +25,7 @@ class Chitter < Sinatra::Base
 
 
 	get '/' do
+		@peeps = Peep.all
     erb :index
   end
 
@@ -76,6 +77,17 @@ class Chitter < Sinatra::Base
 	  session.clear
 	  redirect '/'
 	end
+
+	post '/peep' do
+	  message = params["message"]
+	  posted_by_name = params["posted_by_name"]
+	  posted_by_username = params["posted_by_username"]
+	  Peep.create(:message => message, :posted_by_name => posted_by_name, :posted_by_username => posted_by_username)
+	  redirect to('/')
+	end
+
+
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0

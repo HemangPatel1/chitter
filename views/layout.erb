@@ -9,15 +9,27 @@
 
 <% if current_user %>
   Welcome <%= current_user.name %>
-<!--
-  <form method="post" action="/sessions">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Log Out">
-  </form>
--->
+
     <form method="post" action="/clear">
     <input type="submit" value="Log Out">
     </form>
+
+<div id="new-peep">
+  <form action="/peep" method="post">
+    Peep: <input type="text" name="message">
+    <input type="hidden" name="posted_by_name" value="<%= current_user.name %>">
+    <input type="hidden" name="posted_by_username" value="<%= current_user.username %>">
+    <input type="submit" value="Share">
+  </form>
+</div>
+
+<% else %>
+<nav>
+  <ul>
+    <li><a href="/users/new">Sign Up</a></li>
+    <li><a href="/sessions/new">Login</a></li>
+  </ul>
+</nav>
 <% end %>
 
 
@@ -35,6 +47,7 @@
       <% end %>
     </ul>
 <% end %>
+
 
 
 </header>

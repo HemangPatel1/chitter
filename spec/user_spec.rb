@@ -29,6 +29,14 @@ describe User do
 		expect(user).to respond_to :password_digest=
 	end
 
+	it 'can have a username' do
+		expect(user).to respond_to :username
+	end
+
+	it 'can set a username' do
+		expect(user).to respond_to :username=
+	end	
+
 	it 'is a data mapper resource' do
 	  expect(User.included_modules).to include DataMapper::Resource
 	end

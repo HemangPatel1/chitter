@@ -1,10 +1,10 @@
-<h1>Welcome to Chitter</h1>
+Peeps by other makers:
+<ul>
+  <% @peeps.each do |peep| %>
+    <li><%= peep.message %> by <%= peep.posted_by_username %> aka <%= peep.posted_by_name %></li>
+  <% end %>
 
-<nav>
-  <ul>
-    <li><a href="/users/new">Sign Up</a></li>
-    <li><a href="/sessions/new">Login</a></li>
-  </ul>
-</nav>
+
+</ul>
 
 
