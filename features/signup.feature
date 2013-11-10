@@ -11,7 +11,7 @@ Feature: Signing up
 	Scenario: Signing up - filling out the form
 	Given I am on the sign up page
 	And I complete the form with matching passwords
-	# Then I should see "Welcome Hemang" 
+	Then I should see "Welcome Hemang" 
 
 	Scenario: Signing up- filling out the form wrong
 	Given I am on the sign up page

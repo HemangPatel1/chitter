@@ -8,7 +8,7 @@ env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 
 DataMapper.finalize
-
+DataMapper.auto_upgrade!
 
 class Chitter < Sinatra::Base
 	set :views, File.join(File.dirname(__FILE__), '..', 'views')
@@ -37,7 +37,8 @@ class Chitter < Sinatra::Base
 		@user = User.create(:email => params[:email],
  											 :password => params[:password],
 											 :password_confirmation => params[:password_confirmation],
- 											 :name => params[:name])
+ 											 :name => params[:name],
+											 :username => params[:username])
 		if @user.save
 			session[:user_id] = @user.id
 			redirect to('/')

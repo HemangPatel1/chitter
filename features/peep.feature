@@ -6,7 +6,6 @@ Feature: Viewing Peeps
 	Scenario: Viewing a peep
 		Given I am on the homepage
 		And I have shared the following peeps:
-			| title				| message												|
-			| Ba-na-na			| To banana, or not to banana, that is the question!	|
-		Then I should see "Ba-na-na"
-		And I should see "To banana, or not to banana, that is the question!"
+			| message												|
+			| To banana, or not to banana, that is the question!	|
+		Then I should see "To banana, or not to banana, that is the question!"

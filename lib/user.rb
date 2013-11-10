@@ -7,6 +7,7 @@ class User
 
 	property :id, Serial
 	property :name, String
+	property :username, String, :unique => true, :message => "The username you entered is already being used!"
 	property :email, String, :unique => true, :message => "The email you entered is already being used!"
 	property :password_digest, Text
 
