@@ -10,4 +10,5 @@ class Peep
 	property :posted_by_name, String
 	property :posted_by_username, String
 	property :created_at, DateTime
+
 end

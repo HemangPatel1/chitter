@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'data_mapper'
 require 'rack-flash'
+require './lib/timeago'
 require './lib/user'
 require './lib/peep'
 
@@ -12,7 +13,6 @@ DataMapper.auto_upgrade!
 
 class Chitter < Sinatra::Base
 	set :views, File.join(File.dirname(__FILE__), '..', 'views')
-
 	enable :sessions
 	set :session_secret, 'only a jedi will keep the secret'
 	use Rack::Flash
