@@ -4,7 +4,7 @@ Feature: Viewing Peeps
 	I want to view the peeps I have posted
 
 	Scenario: Viewing a peep
-		Given I am on the homepage
+		Given I am signed in
 		And I have shared the following peeps:
 			| message												|
 			| To banana, or not to banana, that is the question!	|
