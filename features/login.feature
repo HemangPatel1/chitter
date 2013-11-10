@@ -11,4 +11,4 @@ Feature: Signing in
 	Scenario: Signing in - inputing credentials
 		Given I am on the sign in page
 		And I complete the correct details
-		# Then I should see "Welcome Hemang"
+		#Then I should see "Welcome Hemang"

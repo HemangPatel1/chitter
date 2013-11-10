@@ -5,5 +5,5 @@ end
 Given(/^I complete the correct details$/) do
 	fill_in('email', :with => 'hemang2@gmail.com')
 	fill_in('password', :with => 'secret')
-  click_button 'Login'
+  	click_button 'Login'
 end

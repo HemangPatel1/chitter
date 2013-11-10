@@ -4,3 +4,5 @@ Given(/^I have shared the following peeps:$/) do |peeps|
 		click_button 'Share'
   	end
 end
+
+
