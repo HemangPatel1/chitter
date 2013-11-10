@@ -9,6 +9,22 @@
 
 <% if current_user %>
   Welcome <%= current_user.name %>
+<!--
+  <form method="post" action="/sessions">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Log Out">
+  </form>
+-->
+    <form method="post" action="/clear">
+    <input type="submit" value="Log Out">
+    </form>
+<% end %>
+
+
+<% if flash[:notice] %>
+  <div id="notice">
+    <%= flash[:notice] %>
+  </div>
 <% end %>
 
 <% if flash[:errors] && !flash[:errors].empty? %>

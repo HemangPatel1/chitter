@@ -52,7 +52,7 @@ class Chitter < Sinatra::Base
 
 	post '/sessions' do
 		email, password = params[:email], params[:password]
-  	user = User.authenticate(email, password)
+  		user = User.authenticate(email, password)
 	  if user
 			session[:user_id] = user.id
 			redirect to('/')
@@ -62,6 +62,18 @@ class Chitter < Sinatra::Base
 	  end
 	end
 
+	delete '/sessions' do
+		flash[:notice] = "Good bye!"
+	  	session[:user_id] = nil
+	  	session.clear
+	  	redirect to('/')
+	end
+
+	post '/clear' do
+	  flash[:notice] = "Good bye!"
+	  session.clear
+	  redirect '/'
+	end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
