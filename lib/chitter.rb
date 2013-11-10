@@ -25,7 +25,7 @@ class Chitter < Sinatra::Base
 
 
 	get '/' do
-		@peeps = Peep.all
+		@peeps = Peep.all(order: [:created_at.desc])
     erb :index
   end
 
@@ -82,7 +82,8 @@ class Chitter < Sinatra::Base
 	  message = params["message"]
 	  posted_by_name = params["posted_by_name"]
 	  posted_by_username = params["posted_by_username"]
-	  Peep.create(:message => message, :posted_by_name => posted_by_name, :posted_by_username => posted_by_username)
+	  created_at = Time.new
+	  peep = Peep.create(:message => message, :posted_by_name => posted_by_name, :posted_by_username => posted_by_username, :created_at => created_at)
 	  redirect to('/')
 	end
 

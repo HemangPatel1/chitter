@@ -1,7 +1,7 @@
 Peeps by other makers:
 <ul>
   <% @peeps.each do |peep| %>
-    <li><%= peep.message %> by <%= peep.posted_by_username %> aka <%= peep.posted_by_name %></li>
+    <li><%= peep.message %> by <%= peep.posted_by_username %> aka <%= peep.posted_by_name %> at <%= peep.created_at %></li>
   <% end %>
 
 
