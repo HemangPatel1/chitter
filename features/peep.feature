@@ -24,3 +24,11 @@ Feature: Viewing Peeps
 		Then I should see "Banana-ing it up!"
 		And I should see "Hemang"
 		And I should see "Hemangle"
+
+	Scenario: Peeps should be seen in chronological order
+		Given I am signed in
+		And I have shared the following peeps:
+			| message	| name		| username	| created_at				|
+			| Ba1		| Hemang	| Hemangle	| 2013-11-10 18:22:53 +0000	|
+			| Ba2		| Hemang	| Hemangle	| 2013-11-10 18:21:53 +0000	|
+		Then I should see "Ba1" before "Ba2"
