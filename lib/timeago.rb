@@ -34,6 +34,8 @@ def distance_of_time_in_words(minutes)
     "less than 5 minutes"
   when minutes < 10
     "less than 10 minutes"
+  when minutes < 15
+    "less than 15 minutes"
   when minutes < 20
     "less than 20 minutes"
   when minutes < 30 
@@ -42,10 +44,12 @@ def distance_of_time_in_words(minutes)
     "less than 40 minutes"
   when minutes < 50
     "less than 50 minutes"
-  when minutes < 60
-    pluralize(minutes, "hour", "hours")
+  when minutes < 80
     "about 1 hour"
+  when minutes < 1300
+    "about 2 hours"
   when minutes < 1080
+    #pluralize(minutes, "hour", "hours")
     "about #{(minutes / 60).round} hours"
   when minutes < 1440
     "one day"
