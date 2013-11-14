@@ -1,5 +1,4 @@
 # adapted from https://github.com/lmcalpin/tweet-tools/blob/master/timeago.rb
-# timeago ruby gem did not work!
 
 require 'time'
 
